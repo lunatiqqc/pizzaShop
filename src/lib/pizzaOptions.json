@@ -1,0 +1,61 @@
+{
+    "bases": [
+        "standard",
+        "thin and crispy crust",
+        "with cheesecrust",
+        "thick"
+    ],
+    "toppings": {
+        "Sauces": [
+            "tomatosauce",
+            "mixed vegetablesauce",
+            "bbq-sauce"
+        ],
+        "Cheeses": [
+            "gouda cheese",
+            "cheddar cheese",
+            "parmesan cheese",
+            "mozzarella cheese",
+            "Bleu de Gex cheese"
+        ],
+        "Meat": [
+            "pepperoni",
+            "four cheese",
+            "chicken",
+            "ham",
+            "mozzarella cheese",
+            "beef",
+            "bacon",
+            "alredo sauce",
+            "sausage",
+            "cheddar cheese",
+            "italian sausage"
+        ],
+        "Vegan": [
+            "mushrooms",
+            "black olives",
+            "pineapple",
+            "Aubergine",
+            "red pebber/paprika",
+            "yellow pebber/paprika",
+            "onions",
+            "tomatoes",
+            "rucola",
+            "mushroom",
+            "truffel"
+        ],
+        "Spices": [
+            "basil",
+            "oregano",
+            "chili",
+            "garlic",
+            "rosemary"
+        ],
+        "Oils": [
+            "olive oil",
+            "garlic oil",
+            "chili oil",
+            "truffel oil"
+        ]
+    }
+}
