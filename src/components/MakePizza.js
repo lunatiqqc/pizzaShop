@@ -5,8 +5,6 @@ import pizzaOptions from "../lib/pizzaOptions.json";
 import { Link } from "react-router-dom";
 
 export default function MakePizza() {
-    const [pizzaBase, setPizzaBase] = useState();
-
     const getTopping = (topping, typeOfTopping) => {
         return (
             <div key={topping}>
@@ -16,44 +14,31 @@ export default function MakePizza() {
                     id={topping}
                     name={typeOfTopping}
                     value={topping}
-                    onClick={() => {
-                        setToppings((prevState) => {
-                            const copy = prevState;
-
-                            return {
-                                copy,
-                            };
-                        });
-                    }}
                 />
             </div>
         );
     };
 
-    var obj = {};
-
-    const generateObject = () => {
-        Object.keys(pizzaOptions.toppings).forEach((topping) => {
-            console.log(topping);
-            return (obj[topping] = []);
-        });
-
-        return obj;
-    };
-
-    const [toppings, setToppings] = useState(generateObject());
-
     return (
         <div>
-            <article>
-                <h1>Make a pizza</h1>
-                <form
-                    action=''
-                    onChange={() => {
-                        console.log(toppings);
-                    }}
-                >
-                    <fieldset>
+            <article
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    backgroundImage: "url(/images/paper.jpg)",
+                    backgroundSize: "cover",
+                }}
+            >
+                <h1 style={{ margin: "5vh 0" }}>Make a pizza</h1>
+                <form action=''>
+                    <fieldset
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "center",
+                        }}
+                    >
                         <legend>Choose pizzabase</legend>
                         {pizzaOptions.bases.map((base) => {
                             return (
@@ -64,15 +49,20 @@ export default function MakePizza() {
                                         id={base}
                                         name='base'
                                         value={base}
-                                        onClick={() => {
-                                            setPizzaBase(base);
-                                        }}
                                     />
                                 </div>
                             );
                         })}
                     </fieldset>
-                    <fieldset style={{ display: "flex", flexWrap: "wrap" }}>
+                    <fieldset
+                        style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            flexDirection: "row",
+                            textAlign: "center",
+                            justifyContent: "space-evenly",
+                        }}
+                    >
                         <legend>Choose pizzatopping</legend>
                         {Object.entries(pizzaOptions.toppings).map((entry) => {
                             return (
@@ -97,16 +87,6 @@ export default function MakePizza() {
                     </Link>
                 </form>
             </article>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>base</th>
-                    </tr>
-                    <tr>
-                        <td>{pizzaBase}</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     );
 }

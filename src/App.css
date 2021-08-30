@@ -1,1 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    font-family: system-ui;
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+form input,
+form label {
+    margin: 3vh 1vw;
+}
+
+form legend {
+    margin: 5vh 0;
+    font-weight: 600;
+}
