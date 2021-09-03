@@ -93,7 +93,7 @@ export default forwardRef(function MakePizza({ makePizzaRef }) {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    backgroundImage: "url(/images/paper.jpg)",
+                    backgroundImage: `${process.env.PUBLIC_URL}/images/paper.jpg`,
                     backgroundSize: "contain",
                     filter: "brightness(0.8)",
                 }}

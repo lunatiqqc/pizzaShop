@@ -4,11 +4,20 @@ import ThankYou from "./pages/ThankYou";
 import Home from "./pages/Home";
 
 function App() {
+    console.log(process.env.PUBLIC_URL);
     return (
         <div className='App'>
             <Router>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/thank-you' component={ThankYou} />
+                <Route
+                    exact
+                    path={`${process.env.PUBLIC_URL}`}
+                    component={Home}
+                />
+                <Route
+                    exact
+                    path={`${process.env.PUBLIC_URL}/thank-you`}
+                    component={ThankYou}
+                />
             </Router>
         </div>
     );
