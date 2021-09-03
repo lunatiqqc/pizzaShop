@@ -1,13 +1,37 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
-import { motion } from "framer-motion";
+import {
+    animate,
+    motion,
+    useElementScroll,
+    useSpring,
+    useTransform,
+    useViewportScroll,
+} from "framer-motion";
 
 import MakePizza from "../components/MakePizza";
+import About from "./About";
 
 export default function Home() {
+    const { scrollYProgress } = useViewportScroll();
+
+    const yRange = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, window.innerHeight]
+    );
+
+    const makePizzaRef = useRef();
+
+    const aboutRef = useRef();
+
+    const { scrollY } = useViewportScroll();
+
+    useEffect(() => {}, []);
+
     return (
-        <div>
-            <nav
+        <div style={{ backgroundColor: "black" }}>
+            <motion.nav
                 style={{
                     backgroundImage: "url(/images/banner.jpg)",
                     height: "41vw",
@@ -15,6 +39,7 @@ export default function Home() {
                     display: "flex",
                     alignItems: "center",
                     filter: "",
+                    y: yRange,
                 }}
             >
                 <motion.div
@@ -46,6 +71,22 @@ export default function Home() {
                             whileHover={{
                                 backgroundSize: "100% 2px",
                             }}
+                            onTap={() => {
+                                console.log(makePizzaRef);
+
+                                //window.scrollTo({
+                                //    top: 100,
+                                //    left: 100,
+                                //    behavior: "smooth",
+                                //});
+                                console.log("tapped");
+                                animate(0, makePizzaRef.current.offsetTop, {
+                                    duration: 1,
+                                    onUpdate: (v) => {
+                                        window.scrollTo(0, v);
+                                    },
+                                });
+                            }}
                         >
                             Make a pizza
                         </motion.li>
@@ -64,6 +105,22 @@ export default function Home() {
                             whileHover={{
                                 backgroundSize: "100% 2px",
                             }}
+                            onTap={() => {
+                                console.log(makePizzaRef);
+
+                                //window.scrollTo({
+                                //    top: 100,
+                                //    left: 100,
+                                //    behavior: "smooth",
+                                //});
+                                console.log("tapped");
+                                animate(0, aboutRef.current.offsetTop, {
+                                    duration: 1,
+                                    onUpdate: (v) => {
+                                        window.scrollTo(0, v);
+                                    },
+                                });
+                            }}
                         >
                             About us
                         </motion.li>
@@ -77,8 +134,9 @@ export default function Home() {
                         alt='pizzashop banner'
                     />
                 </figure> */}
-            </nav>
-            <MakePizza />
+            </motion.nav>
+            <MakePizza makePizzaRef={makePizzaRef} />
+            <About aboutRef={aboutRef} />
         </div>
     );
 }

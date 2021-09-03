@@ -16,26 +16,23 @@
             "cheddar cheese",
             "parmesan cheese",
             "mozzarella cheese",
-            "Bleu de Gex cheese"
+            "bleu de gex cheese"
         ],
         "Meat": [
             "pepperoni",
             "four cheese",
             "chicken",
             "ham",
-            "mozzarella cheese",
             "beef",
             "bacon",
-            "alredo sauce",
             "sausage",
-            "cheddar cheese",
             "italian sausage"
         ],
         "Vegan": [
             "mushrooms",
             "black olives",
             "pineapple",
-            "Aubergine",
+            "aubergine",
             "red pebber/paprika",
             "yellow pebber/paprika",
             "onions",
