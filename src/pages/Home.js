@@ -33,7 +33,7 @@ export default function Home() {
         <div style={{ backgroundColor: "black" }}>
             <motion.nav
                 style={{
-                    backgroundImage: `${process.env.PUBLIC_URL}/images/banner.jpg`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/banner.jpg)`,
                     height: "41vw",
                     backgroundSize: "cover",
                     display: "flex",

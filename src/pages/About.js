@@ -18,7 +18,7 @@ export default forwardRef(function About({ aboutRef }) {
                 <InViewAnimation variants={variants}>
                     <motion.div
                         style={{
-                            background: `${process.env.PUBLIC_URL}/images/about.jpg`,
+                            background: `url(${process.env.PUBLIC_URL}/images/about.jpg)`,
                             backgroundSize: "cover",
                         }}
                     >
@@ -40,7 +40,7 @@ export default forwardRef(function About({ aboutRef }) {
                 <InViewAnimation variants={variants}>
                     <motion.div
                         style={{
-                            background: `${process.env.PUBLIC_URL}/images/ingredients.jpg`,
+                            background: `url(${process.env.PUBLIC_URL}/images/ingredients.jpg)`,
                             backgroundPosition: "center",
                             margin: "10vh 0",
                         }}
